@@ -1,0 +1,138 @@
+const Discord = require('discord.js')
+
+module.exports.run = async(bot, message, args) => {
+
+ console.log(`> O usuário ${message.author.tag} usou o comando: ${message.content}`)
+
+ let comandos12 = message.guild.channels.find(`id`, "675115197509402647");
+ if(!comandos12) return message.channel.send(":x: | Não consegui achar o chat `logs`.");
+
+
+ let comandos1 = new Discord.RichEmbed()
+
+ .setTitle('Sistema corrompido.')
+ .setDescription(`SISTEMA: \`corrompido\` `)
+ .setFooter('Página: 1/3')
+ .setColor('GREEN')
+
+return message.channel.send(comandos1)
+
+}
+ /*
+ message.delete().catch(O_o=>{});
+ comandos12.send(`> O usuário \`${message.author.tag}\` usou o comando: \`${message.content}\`\n> Cujo id é: \`${message.author.id}\` `);
+
+   let comandos1 = new Discord.RichEmbed()
+   .setTitle('Lista de comandos.')
+   .setDescription(`Olá, aqui estão alguns dos meus comandos, atualmente eu tenho **${bot.commands.size}** comandos disponíveis para vocês!`)
+   .addField(`Comando de ajuda:`, `-help\n\`Enviar uma lista de comandos.\``)
+   .setFooter('Página: 1/3')
+   .setColor('GREEN')
+ 
+ return message.channel.send(comandos1).then(async msg => {
+ 
+       await msg.react("◀️") 
+       await msg.react("▶️") 
+
+     let comandos2 = new Discord.RichEmbed()  
+ 
+     .setTitle('Lista de comandos.')
+     .setDescription(`Categoria: \`Moderação\`.`)
+     .addField(`Comando de Moderação:`, `-help\n\`Enviar uma lista de comandos.\``)
+     .setFooter('Página: 2/3')
+     .setColor('GREEN')
+
+     let comandos3 = new Discord.RichEmbed()  
+ 
+     .setTitle('Lista de comandos.')
+     .setDescription(`Categoria: \`Diversão\`.`)
+     .addField(`Comando de Diversão:`, `-help\n\`Enviar uma lista de comandos.\``)
+     .setFooter('Página: 3/3')
+     .setColor('GREEN')
+
+     let comandos4 = new Discord.RichEmbed()  
+ 
+     .setTitle('Lista de comandos.')
+     .setDescription(`Categoria: \`Utilitários.\`.`)
+     .addField(`Comando de Utilitários:`, `-help\n\`Enviar uma lista de comandos.\``)
+     .setFooter('Página: 3/3')
+     .setColor('GREEN')
+
+     const a2 = (reaction, user) => reaction.emoji.name ==='◀️' && user.id === message.author.id
+     const b2 = msg.createReactionCollector(a2, { time: 50000 });
+ 
+     const a3 = (reaction, user) => reaction.emoji.name ==='▶️' && user.id === message.author.id
+     const b3 = msg.createReactionCollector(a3, { time: 50000 });
+ 
+     
+   
+   b2.on("collect", c2 => {
+     msg.edit(comandos1)
+     c2.remove(message.author.id) 
+    })
+   b3.on("collect", c3 => {
+     msg.delete(comandos2)
+     c3.remove(message.author.id)
+     msg.channel.send(comandos2)
+
+     .then(async msg => {
+
+       await msg.react('◀️')
+       await msg.react('▶️')
+
+        const a4 = (reaction, user) => reaction.emoji.name ==='▶️' && user.id === message.author.id
+        const b4 = msg.createReactionCollector(a4, { time: 50000 }); 
+
+        const a5 = (reaction, user) => reaction.emoji.name ==='▶️' && user.id === message.author.id
+        const b5 = msg.createReactionCollector(a5, { time: 50000 });
+ 
+        const a6 = (reaction, user) => reaction.emoji.name ==='◀️' && user.id === message.author.id
+        const b6 = msg.createReactionCollector(a6, { time: 50000 });
+ 
+        const a32 = (reaction, user) => reaction.emoji.name ==='◀️' && user.id === message.author.id
+        const b32 = msg.createReactionCollector(a32, { time: 50000 });
+
+       b4.on("collect", c4 => {
+       msg.edit(comandos2)
+       c4.remove(message.author.id) 
+         })
+       b5.on("collect", c5 => {
+       msg.edit(comandos3)
+       c5.remove(message.author.id) 
+         })
+        b6.on("collect", c6 => {
+        msg.edit(comandos4)
+        c6.remove(message.author.id) 
+          })
+       b32.on("collect", c32 => {
+         msg.edit(comandos1)
+         .then(async message => {
+
+            await msg.react('◀️')
+            await msg.react('▶️')
+
+        const a7 = (reaction, user) => reaction.emoji.name ==='◀️' && user.id === message.author.id
+        const b7 = msg.createReactionCollector(a7, { time: 50000 }); 
+      
+        const a8 = (reaction, user) => reaction.emoji.name ==='▶️' && user.id === message.author.id
+        const b8 = msg.createReactionCollector(a8, { time: 50000 }); 
+
+         b7.on("collect", c7 => {
+         msg.edit(comandos1)
+         c7.remove(message.author.id)  
+            })
+         b8.on("collect", c8 => {
+         msg.edit(comandos2)
+         c8.remove(message.author.id)  
+             })
+               })
+             })
+           })     
+         })
+       })
+     }
+*/
+exports.help = {
+    nome : "Comandos.",
+    descricao: "Isso não é exatamente um comando... ;-;"
+  }

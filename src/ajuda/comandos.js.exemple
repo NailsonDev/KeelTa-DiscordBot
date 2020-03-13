@@ -1,0 +1,96 @@
+
+const Discord = require("discord.js");
+const fs = require('fs');
+const config = require('../../config.json');
+
+module.exports.run = async(bot, message, args) => {
+
+        let botName = bot.user.username;
+
+        let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
+
+            if(!prefixes[message.guild.id]){
+              prefixes[message.guild.id] = {
+                prefixes: config.prefix
+              };
+            }
+
+            var comandos = new Discord.RichEmbed()
+        
+        .setTitle('Lista de comandos.')
+        .setAuthor(botName)
+        .setDescription(`Olá, aqui você pode vizualizar todos os comandos da \`${botName}\`, atualmente eu tenho \`${bot.commands.size}\` comandos livres para você usar no seu servidor!`)
+        .setFooter(`Total de comandos (${bot.commands.size})`)
+        .setColor("ORANGE")
+
+         message.channel.send(comandos).then(async msg => {
+
+            await msg.react("◀️")
+            await msg.react("🔄")
+            await msg.react("▶️")
+            await msg.react('❌')
+            
+            var comandos1 = new Discord.RichEmbed()
+    
+            .setTitle('Lista de comandos.')
+            .setAuthor(botName)
+            .setDescription(`Comandos [7]`)
+            .addField(`Categoria de: Moderação` , ` [Clique aqui para ver todos os comandos](https://is.gd/KeeltaBot)`)
+            .setFooter(`Total de comandos (${bot.commands.size})`)
+            .setColor("GREEN")
+            
+           var comandos2 = new Discord.RichEmbed()
+    
+            .setTitle('Lista de comandos.')
+            .setAuthor(botName)
+            .setDescription(`Comandos [${bot.commands.size - 33}]`)
+            .addField(`Categoria de: Diversão` , `[Clique aqui para ver todos os comandos](https://is.gd/KeeltaBot)`)
+            .setFooter(`Total de comandos (${bot.commands.size})`)
+            .setColor("GREEN")
+
+           var comandos3 = new Discord.RichEmbed()
+    
+           .setTitle('Lista de comandos.')
+            .setAuthor(botName)
+            .setDescription(`Comandos [${bot.commands.size - 7}]`)
+            .addField(`Categoria de: Moderação/Utilitários.` , ` [Clique aqui para ver todos os comandos](https://is.gd/KeeltaBot) \n`)
+            .setFooter(`Total de comandos (${bot.commands.size})`)
+            .setColor("GREEN")
+
+            const a1 = (reaction, user) => reaction.emoji.name ==='◀️' && user.id === message.author.id
+            const a2 = (reaction, user) => reaction.emoji.name ==='🔄' && user.id === message.author.id
+            const a3 = (reaction, user) => reaction.emoji.name ==='▶️' && user.id === message.author.id
+            const a4 = (reaction, user) => reaction.emoji.name ==='❌' && user.id === message.author.id
+        
+            const b1 = msg.createReactionCollector(a1, { time: 300000 });
+            const b2 = msg.createReactionCollector(a2, { time: 300000 });
+            const b3 = msg.createReactionCollector(a3, { time: 300000 });
+            const b4 = msg.createReactionCollector(a4, { time: 3000000 });
+
+            b1.on("collect", c1 => {
+            msg.edit(comandos2)
+            c1.remove(message.author.id)
+            })
+
+            b2.on("collect", c2 => {
+            msg.edit(comandos)
+            c2.remove(message.author.id)
+            })
+
+            b3.on("collect", c3 => {
+            msg.edit(comandos3)
+            c3.remove(message.author.id)   
+            })
+
+            b4.on("collect", c4 => {
+            msg.delete(0)   
+            c4.remove(message.author.id) 
+
+            })
+       })
+  }
+
+exports.help = {
+  nome : "Comandos",
+  descricao: null
+}

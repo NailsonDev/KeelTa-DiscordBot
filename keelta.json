@@ -1,0 +1,38 @@
+{
+  "servidor1": [
+    {
+      "id": "1234",
+      "nick": "nailson",
+      "avatar": "link.com/avatar.png"
+    },
+    {
+      "id": "261220205311688704",
+      "nick": "Miss",
+      "avatar": "https://cdn.discordapp.com/avatars/261220205311688704/1d347a4ed92629561d758dc7f2439e85.png?size=2048"
+    },
+    {
+      "id": "405938667534811136",
+      "nick": "∑㎡◊ɬⅰ◊иㄅ-Kyun {;f B L f;}",
+      "avatar": "https://cdn.discordapp.com/avatars/405938667534811136/89b29984bb10c77eeb40279dcf341a14.png?size=2048"
+    },
+    {
+      "id": "522469847364403200",
+      "nick": "Kyan",
+      "avatar": "https://cdn.discordapp.com/avatars/522469847364403200/f435f9737a575d28a21d71d8dc3b7089.png?size=2048"
+    },
+    {
+      "id": "510211941881479182",
+      "nick": [
+        "PAULA",
+        "TEJANDO"
+      ],
+      "avatar": "https://cdn.discordapp.com/avatars/510211941881479182/1f552494eccf6c735425c51a5e6fcdd4.png?size=2048"
+    },
+    {
+      "id": "534381987323052032",
+      "nick": "</Sad>",
+      "avatar": "https://cdn.discordapp.com/avatars/534381987323052032/8337f3224ae1bfacdcbb85c416d2b7bc.png?size=2048"
+    }
+  ],
+  "servidor2": []
+}
